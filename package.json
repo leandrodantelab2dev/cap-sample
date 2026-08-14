@@ -8,10 +8,10 @@
   },
   "dependencies": {
     "@sap/cds": "^10",
-    "express": "^4"
+    "@cap-js/sqlite": "^3"
   },
   "devDependencies": {
-    "@cap-js/sqlite": "^3"
+    "@sap/cds-dk": "^10"
   },
   "scripts": {
     "start": "cds-serve",

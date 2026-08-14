@@ -26,4 +26,27 @@ db/data/*.csv         mock data
 srv/service.cds        SalesService projections
 srv/annotations.cds    Fiori Elements UI annotations
 app/products/webapp    Fiori Elements List Report / Object Page app
+mta.yaml               Cloud Foundry deployment descriptor
 ```
+
+## Deploy to Cloud Foundry (SAP BTP)
+
+One module, no HANA, no auth — the whole project (db/, srv/, app/) is packaged and run as a single Node.js app, same as `cds watch` locally. SQLite runs in-memory, so data resets on every restart/scale — fine for a demo, not for production persistence.
+
+```bash
+npm install -g mbt          # Cloud MTA Build Tool, if not already installed
+mbt build                   # produces mta_archives/cap-sample_1.0.0.mtar
+cf login                    # target your BTP subaccount/org/space
+cf deploy mta_archives/cap-sample_1.0.0.mtar
+```
+
+After deploy, `cf apps` shows the app's route. Same test URLs as above, just swap `localhost:4004` for that route:
+
+- `https://<route>/odata/v4/SalesService/$metadata`
+- `https://<route>/odata/v4/SalesService/Products`
+- `https://<route>/products/webapp/index.html`
+
+### Add later if needed
+
+- **Persistent DB**: swap SQLite for SAP HANA Cloud — add `@cap-js/hana`, a `db-deployer` module, and a `hana`/`hdi-container` resource in `mta.yaml`.
+- **Auth**: protect the service with XSUAA — add `xs-security.json`, an `xsuaa` resource, `@requires` on the service, and assign the role collection to users in the BTP cockpit.
