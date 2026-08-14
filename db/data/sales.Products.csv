@@ -1,0 +1,6 @@
+ID,name,description,price,currency,stock,customer_ID
+a9d34ba7-9e00-42b0-be1c-5b9fd860649d,Notebook Pro 15,High-performance laptop for professionals,7499.90,BRL,12,ca666857-4719-4b5f-a149-057cf6be3be7
+09538c70-f0bf-4f80-b02c-5bf36ae353db,Wireless Mouse,Ergonomic wireless mouse with USB receiver,89.90,BRL,150,ca666857-4719-4b5f-a149-057cf6be3be7
+3cd52b17-fa5b-416e-ac9f-c02428f64fb5,Mechanical Keyboard,RGB mechanical keyboard with blue switches,349.50,BRL,60,72203ea8-6b3d-46e8-b5df-3eee8cc130f0
+0348e11d-c6c2-4d15-971d-cbf2fe98f4df,27-inch Monitor,4K UHD monitor with HDR support,1899.00,BRL,25,72203ea8-6b3d-46e8-b5df-3eee8cc130f0
+743f776a-b92a-4c03-87e4-ccb61feb1b47,USB-C Docking Station,Multiport docking station for laptops,459.00,BRL,40,778885f5-b7c6-42d0-9d31-cc40be07cf48

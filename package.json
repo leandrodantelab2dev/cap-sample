@@ -1,0 +1,30 @@
+{
+  "name": "cap-sample",
+  "version": "1.0.0",
+  "description": "Minimal CAP Node.js sample with Fiori Elements",
+  "private": true,
+  "engines": {
+    "node": ">=18"
+  },
+  "dependencies": {
+    "@sap/cds": "^10",
+    "express": "^4"
+  },
+  "devDependencies": {
+    "@cap-js/sqlite": "^3"
+  },
+  "scripts": {
+    "start": "cds-serve",
+    "watch": "cds watch"
+  },
+  "cds": {
+    "requires": {
+      "db": {
+        "kind": "sqlite",
+        "credentials": {
+          "url": ":memory:"
+        }
+      }
+    }
+  }
+}
