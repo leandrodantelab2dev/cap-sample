@@ -23,6 +23,13 @@ modules:
       - name: srv-api
         properties:
           srv-url: ${default-url}
+    requires:
+      - name: cap-sample-xsuaa
 
 resources:
-  []
+  - name: cap-sample-xsuaa
+    type: org.cloudfoundry.managed-service
+    parameters:
+      service: xsuaa
+      service-plan: application
+      path: ./xs-security.json
